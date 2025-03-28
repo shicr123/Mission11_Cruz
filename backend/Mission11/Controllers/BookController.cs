@@ -6,6 +6,8 @@ namespace Mission11.Controllers
 {
     [Route("[controller]")]
     [ApiController]
+
+    // This controller is used to manage the books in the database.
     public class BookController : ControllerBase
     {
 
