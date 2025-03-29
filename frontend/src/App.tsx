@@ -1,5 +1,5 @@
 import './App.css';
-import BookList from '/Booklist.tsx';
+import BookList from './Booklist';
 
 function App() {
   return (
