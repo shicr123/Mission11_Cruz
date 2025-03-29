@@ -17,7 +17,7 @@ namespace Mission11.Controllers
         public BookController(BookDbContext temp) => _bookContext = temp;
 
 
-        [HttpGet("AllBooks")]
+        [HttpGet("Alloks")]
         public IActionResult GetBooks(int pageHowMany = 5, int pageNum = 1)
         {
             var something = _bookContext.Books

@@ -13,7 +13,7 @@ function BookList() {
   useEffect(() => {
     const fetchBooks = async () => {
       const response = await fetch(
-        `https://localhost:3000/book/allbooks?pageHowMany=${pageSize}&pageNum=${pageNum}`
+        `https://localhost:5000/book/allbooks?pageHowMany=${pageSize}&pageNum=${pageNum}`
       );
       const data = await response.json();
       setBooks(data.books);
