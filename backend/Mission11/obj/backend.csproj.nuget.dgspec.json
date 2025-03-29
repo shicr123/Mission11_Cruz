@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/shirleycruz/Desktop/Mission11_Cruz/backend/backend/backend/backend.csproj": {}
+    "/Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/backend.csproj": {}
   },
   "projects": {
-    "/Users/shirleycruz/Desktop/Mission11_Cruz/backend/backend/backend/backend.csproj": {
+    "/Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/shirleycruz/Desktop/Mission11_Cruz/backend/backend/backend/backend.csproj",
+        "projectUniqueName": "/Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/backend.csproj",
         "projectName": "backend",
-        "projectPath": "/Users/shirleycruz/Desktop/Mission11_Cruz/backend/backend/backend/backend.csproj",
+        "projectPath": "/Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/backend.csproj",
         "packagesPath": "/Users/shirleycruz/.nuget/packages/",
-        "outputPath": "/Users/shirleycruz/Desktop/Mission11_Cruz/backend/backend/backend/obj/",
+        "outputPath": "/Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/shirleycruz/.nuget/NuGet/NuGet.Config"
@@ -36,13 +36,22 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
-        }
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.14, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.14, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.6.2, )"
@@ -67,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.406/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/shirleycruz/.dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
