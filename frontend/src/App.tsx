@@ -16,7 +16,8 @@ function App() {
           <div className="col-md-3">
             <CategoryFilter 
             selectedCategories={selectedCategories} 
-            setSelectedCategories = {setSelectedCategories} />
+            setSelectedCategories = {setSelectedCategories} 
+            />
           </div>
           <div className="col-md-9">
             <BookList selectedCategories = {selectedCategories} />

@@ -4,10 +4,9 @@ import './CategoryFilter.css';
 function CategoryFilter ({
     selectedCategories,
     setSelectedCategories,
-
 }: {
     selectedCategories: string[];
-    setSelectedCategories: ( categories: string[]) => void;
+    setSelectedCategories: (categories: string[]) => void;
 })  // Pass the function as a prop
 {
     const [categories, setCategories] = useState<string[]>([]);
