@@ -18,14 +18,23 @@ namespace Mission11.Controllers
 
 
         [HttpGet("AllBooks")]
-        public IActionResult GetBooks(int pageHowMany = 5, int pageNum = 1)
+        public IActionResult GetBooks(int pageHowMany = 5, int pageNum = 1, [FromQuery] List<string>? bookTypes = null )
         {
-            var something = _bookContext.Books
-                .Skip((pageNum-1)* pageHowMany)
+            var query = _bookContext.Books.AsQueryable();
+            if (bookTypes != null && bookTypes.Any())
+            {
+                query = query.Where(b => bookTypes.Contains(b.bookType));
+            }
+
+             var totalNumProjects = query.Count();
+
+
+            var something = query
+                .Skip((pageNum - 1) * pageHowMany)
                 .Take(pageHowMany)
                 .ToList();
 
-            var totalNumProjects = _bookContext.Books.Count();
+        
 
             var someObject = new
             {
@@ -36,12 +45,18 @@ namespace Mission11.Controllers
             return Ok(someObject);
         }
 
-        [HttpGet("FunctionalBooks")]
-        public IEnumerable<Book> GetFunctionalBooks()
+
+        [HttpGet("GetBookTypes")]
+        public IActionResult GetBookTypes()
         {
-            var something = _bookContext.Books.Where(p => p.Category == "Functional").ToList();
-            return something;
+            var bookTypes = _bookContext.Books
+                .Select(b => b.Category)
+                .Distinct()
+                .ToList();
+
+            return Ok(bookTypes);
         }
+
     }
 
 }

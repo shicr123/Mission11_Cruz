@@ -8,7 +8,6 @@
 /Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/obj/Debug/net8.0/backend.sourcelink.json
 /Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/bin/Debug/net8.0/appsettings.Development.json
 /Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/bin/Debug/net8.0/appsettings.json
-/Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/bin/Debug/net8.0/backend.staticwebassets.endpoints.json
 /Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/bin/Debug/net8.0/backend
 /Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/bin/Debug/net8.0/backend.deps.json
 /Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/bin/Debug/net8.0/backend.runtimeconfig.json
@@ -56,9 +55,7 @@
 /Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/obj/Debug/net8.0/scopedcss/bundle/backend.styles.css
 /Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/obj/Debug/net8.0/staticwebassets.build.json
 /Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/obj/Debug/net8.0/staticwebassets.development.json
-/Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/obj/Debug/net8.0/staticwebassets.build.endpoints.json
 /Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/obj/Debug/net8.0/staticwebassets/msbuild.backend.Microsoft.AspNetCore.StaticWebAssets.props
-/Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/obj/Debug/net8.0/staticwebassets/msbuild.backend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 /Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/obj/Debug/net8.0/staticwebassets/msbuild.build.backend.props
 /Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.backend.props
 /Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.backend.props
@@ -69,3 +66,6 @@
 /Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/obj/Debug/net8.0/backend.pdb
 /Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/obj/Debug/net8.0/backend.genruntimeconfig.cache
 /Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/obj/Debug/net8.0/ref/backend.dll
+/Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/bin/Debug/net8.0/backend.staticwebassets.endpoints.json
+/Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/obj/Debug/net8.0/staticwebassets.build.endpoints.json
+/Users/shirleycruz/Desktop/Mission11_Cruz/backend/Mission11/obj/Debug/net8.0/staticwebassets/msbuild.backend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props

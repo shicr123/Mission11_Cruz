@@ -1,0 +1,13 @@
+bon/
+obj/
+
+.vs/
+*.suo
+*.user
+*.sln.docstates
+
+.idea/
+*.DotSetting.user
+
+*.log
+*.tlog
