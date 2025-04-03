@@ -13,8 +13,10 @@ function BookList( {selectedCategories}: {selectedCategories: string[] }) {
   useEffect(() => {
     const fetchBooks = async () => {
 
-      const categoryParams = selectedCategories.map((cat) => `bookTypes=${encodeURIComponent(cat)}`)
+      const categoryParams = selectedCategories
+      .map((cat) => `bookTypes=${encodeURIComponent(cat)}`)
       .join('&');
+      
       const response = await fetch(
         `https://localhost:5000/book/allbooks?pageHowMany=${pageSize}&pageNum=${pageNum}${selectedCategories.length ? `&${categoryParams}` : ''}`
       );

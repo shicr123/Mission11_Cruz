@@ -12,8 +12,6 @@ namespace Mission11.Controllers
     {
 
         private BookDbContext _bookContext;
-
-
         public BookController(BookDbContext temp) => _bookContext = temp;
 
 
@@ -23,18 +21,14 @@ namespace Mission11.Controllers
             var query = _bookContext.Books.AsQueryable();
             if (bookTypes != null && bookTypes.Any())
             {
-                query = query.Where(b => bookTypes.Contains(b.bookType));
+                query = query.Where(b => bookTypes.Contains(b.Category));
             }
 
-             var totalNumProjects = query.Count();
-
-
+            var totalNumProjects = query.Count();
             var something = query
                 .Skip((pageNum - 1) * pageHowMany)
                 .Take(pageHowMany)
                 .ToList();
-
-        
 
             var someObject = new
             {
