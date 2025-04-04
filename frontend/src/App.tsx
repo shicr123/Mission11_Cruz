@@ -1,30 +1,29 @@
-import { useState } from 'react';
 import './App.css';
-import BookList from './Booklist';
-import CategoryFilter from './CategoryFilter';
-import WelcomeBook from './WelcomeBook';
+import CartSummary from './components/CartSummary';
+import { CartProvider } from './context/CartContext';
+import BuyPage from './pages/BuyPage';
+import CartPage from './pages/CartPage';
+import ProjectsPage from './pages/ProjectsPage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
-      const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   return (
-    <>
-      <div className ="container"> 
-        <div className="row bg-primary text-white"> 
-          <WelcomeBook />
-        </div>
-        <div className="row">
-          <div className="col-md-3">
-            <CategoryFilter 
-            selectedCategories={selectedCategories} 
-            setSelectedCategories = {setSelectedCategories} 
-            />
-          </div>
-          <div className="col-md-9">
-            <BookList selectedCategories = {selectedCategories} />
-          </div>
-        </div>
-      </div>
-    </>
+    <CartProvider>
+      <Router>
+        {/* Header with navigation and CartSummary */}
+        <header>
+          <CartSummary /> {/* This will appear on all pages */}
+        </header>
+
+        {/* Page Routes */}
+        <Routes>
+          <Route path="/" element={<ProjectsPage />} />
+          <Route path="projects" element={<ProjectsPage />} />
+          <Route path="/buy/:title/:bookId/:price" element={<BuyPage />} />
+          <Route path="/cart" element={<CartPage />} />
+        </Routes>
+      </Router>
+    </CartProvider>
   );
 }
 

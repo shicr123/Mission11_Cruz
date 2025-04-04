@@ -7,7 +7,7 @@ namespace Mission11.Controllers
     [Route("[controller]")]
     [ApiController]
 
-    // This controller is used to manage the books in the database.
+    // This controller is used to manage the books in the database
     public class BookController : ControllerBase
     {
 
@@ -38,7 +38,7 @@ namespace Mission11.Controllers
 
             return Ok(someObject);
         }
-
+        // This method is used to get the details of a specific book by its ID
 
         [HttpGet("GetBookTypes")]
         public IActionResult GetBookTypes()
