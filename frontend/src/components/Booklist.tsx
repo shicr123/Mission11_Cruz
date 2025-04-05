@@ -30,7 +30,7 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
     };
 
     loadBooks();
-  }, [pageSize, pageNum]);
+  }, [pageSize, pageNum, selectedCategories]);
 
   useEffect(() => {
     if (books.length > 0) { // Ensure books are loaded before sorting
@@ -72,19 +72,21 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
               Buy
             </button>
           </div>
-          <Pagination
-            currentPage={pageNum}
-            totalPages={totalPages}
-            pageSize={pageSize}
-            onPageChange={setPageNum}
-            onPageSizeChange={(newSize) => {
-              setPageSize(newSize);
-              setPageNum(1); // Reset to first page when changing page size
-            }}
-          />
+          
         </div>
 
       ))}
+
+      <Pagination
+        currentPage={pageNum}
+        totalPages={totalPages}
+        pageSize={pageSize}
+        onPageChange={setPageNum}
+        onPageSizeChange={(newSize) => {
+          setPageSize(newSize);
+          setPageNum(1); // Reset to first page when changing page size
+        }}
+      />
     </>
   );
 }

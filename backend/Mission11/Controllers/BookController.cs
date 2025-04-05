@@ -6,29 +6,32 @@ namespace Mission11.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-
-    // This controller is used to manage the books in the database
     public class BookController : ControllerBase
     {
 
         private BookDbContext _bookContext;
+
+
         public BookController(BookDbContext temp) => _bookContext = temp;
 
 
         [HttpGet("AllBooks")]
-        public IActionResult GetBooks(int pageHowMany = 5, int pageNum = 1, [FromQuery] List<string>? bookTypes = null )
+        public IActionResult GetBooks(int pageHowMany = 5, int pageNum = 1, [FromQuery] List<string>? bookTypes = null)
         {
             var query = _bookContext.Books.AsQueryable();
+
             if (bookTypes != null && bookTypes.Any())
             {
-                query = query.Where(b => bookTypes.Contains(b.Category));
+                query = query.Where(p => bookTypes.Contains(p.Category));
             }
 
-            var totalNumProjects = query.Count();
+
             var something = query
-                .Skip((pageNum - 1) * pageHowMany)
+                .Skip((pageNum-1)* pageHowMany)
                 .Take(pageHowMany)
                 .ToList();
+
+            var totalNumProjects = _bookContext.Books.Count();
 
             var someObject = new
             {
@@ -38,7 +41,6 @@ namespace Mission11.Controllers
 
             return Ok(someObject);
         }
-        // This method is used to get the details of a specific book by its ID
 
         [HttpGet("GetBookTypes")]
         public IActionResult GetBookTypes()
@@ -51,7 +53,52 @@ namespace Mission11.Controllers
             return Ok(bookTypes);
         }
 
+        [HttpPost("AddBook")]
+        public IActionResult AddBook([FromBody] Book newBook)
+        {
+            _bookContext.Books.Add(newBook);
+            _bookContext.SaveChanges();
+            return Ok(newBook);
+        }
+
+
+
+        [HttpPut("UpdateBook/{bookId}")]
+        public IActionResult UpdateBook(int bookId, [FromBody] Book updatedBook)
+        {
+            var existingBook = _bookContext.Books.Find(bookId);
+
+            existingBook.Title = updatedBook.Title;
+            existingBook.Author = updatedBook.Author;
+            existingBook.Publisher= updatedBook.Publisher;
+            existingBook.ISBN = updatedBook.ISBN;
+            existingBook.Classification = updatedBook.Classification;
+            existingBook.Category = updatedBook.Category;
+            existingBook.PageCount = updatedBook.PageCount;
+            existingBook.Price = updatedBook.Price;
+
+            _bookContext.Books.Update(existingBook);
+            _bookContext.SaveChanges();
+
+            return Ok(existingBook);
+        }
+
+
+        [HttpDelete("DeleteBook/{bookId}")]
+        public IActionResult DeleteBook(int bookId)
+        {
+            var book = _bookContext.Books.Find(bookId);
+
+            if (book == null)
+            {
+                return NotFound(new {message = "Book not found"});
+            }
+
+            _bookContext.Books.Remove(book);
+            _bookContext.SaveChanges();
+
+            return NoContent();
+        }
     }
 
 }
-

@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/c77c001c-6a01-41a0-892a-706d1ff4fb35/resourceGroups/appsvc_windows_eastus/providers/Microsoft.Web/sites/Book-Shirley-Backend",
+    "appService.deploySubpath": "backend/Mission11/publish"
+}

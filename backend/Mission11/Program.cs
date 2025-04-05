@@ -17,15 +17,12 @@ options.UseSqlite(builder.Configuration.GetConnectionString("BookConnection")));
 
 
 builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowReactApp",
-        policy =>
-        {
-            policy.WithOrigins("http://localhost:3000") // This is my  React app's URL
-                  .AllowAnyMethod()
-                  .AllowAnyHeader();
-        });
-});
+    options.AddPolicy("AllowReactAppBlah", 
+        policy => {
+            policy.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+        }));
 
 var app = builder.Build();
 
@@ -37,7 +34,7 @@ if (app.Environment.IsDevelopment())
 }
 
 // Use the CORS policy before other middleware
-app.UseCors("AllowReactApp");
+app.UseCors("AllowReactAppBlah");
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
